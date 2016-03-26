@@ -1,0 +1,14 @@
+{
+    "extends": "airbnb",
+    "rules": {
+      "no-console": 0,
+      "prefer-template": 1,
+      "func-names": 0 
+    },
+    "plugins": [
+        
+    ],
+    "env": {
+      "node": true
+    }
+}
