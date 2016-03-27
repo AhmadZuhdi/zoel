@@ -37,6 +37,7 @@
   "dependencies": {
     "app-module-path": "^1.0.6",
     "fs-extra-promise": "^0.3.1",
-    "hapi": "^13.2.2"
+    "hapi": "^13.2.2",
+    "moment": "^2.12.0"
   }
 }

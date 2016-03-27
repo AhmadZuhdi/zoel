@@ -2,3 +2,4 @@ app/
 .vscode/
 node_modules/
 typings/
+*.log

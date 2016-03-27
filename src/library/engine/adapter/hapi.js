@@ -1,5 +1,5 @@
 import Hapi from 'hapi';
-import pathConfig from 'configs/paths';
+import log from 'library/log';
 
 const AVAILABLE_METHODS = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'];
 
@@ -8,7 +8,7 @@ export default class HapiEngine {
     this.config = config;
   }
   start() {
-    console.log('Starting Hapi Engine');
+    log('Starting Hapi Engine');
     this.server = new Hapi.Server();
     this.server.connection({
       host: this.config.host,
@@ -20,7 +20,7 @@ export default class HapiEngine {
         throw new Error(err);
       }
 
-      console.log(`Hapi Engine started at: ${this.server.info.uri}`);
+      log(`Hapi Engine started at: ${this.server.info.uri}`);
     });
   }
   /**
