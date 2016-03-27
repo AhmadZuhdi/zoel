@@ -20,7 +20,7 @@ export default class HapiEngine {
         throw new Error(err);
       }
 
-      console.log(`Hapi Engine starten at: ${this.server.info.uri}`);
+      console.log(`Hapi Engine started at: ${this.server.info.uri}`);
     });
   }
   /**
@@ -30,7 +30,7 @@ export default class HapiEngine {
    */
   addRoute(routeConfig) {
     if (routeConfig.methods === '*') { routeConfig.methods = AVAILABLE_METHODS; }
-    console.log(routeConfig);
+
     const [handlerPath, methodName] = routeConfig.handler.split('@');
     const handler = require(handlerPath);
 
