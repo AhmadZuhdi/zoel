@@ -1,0 +1,14 @@
+{
+  "name": "com.zuhdi.dota",
+  "version": "0.0.0",
+  "description": "dota 2 packages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  
+  "configuration": false,
+  "enable": true
+}

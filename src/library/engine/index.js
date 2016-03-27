@@ -1,5 +1,5 @@
-import engineConfig from './../../configs/engine';
-import { resolveModule } from './../utilities';
+import engineConfig from 'configs/engine';
+import { resolveModule } from 'library/utilities';
 
 export default class Engine {
   constructor(config) {
@@ -7,7 +7,12 @@ export default class Engine {
   }
   start() {
     const EngineAdapter = resolveModule(require(`./adapter/${engineConfig.default}`));
-    const adapter = new EngineAdapter(this.config);
-    adapter.start();
+    const engine = new EngineAdapter(this.config);
+    engine.start();
+    this.engine = engine;
+  }
+  addRoute(routeConfig) {
+    this.engine.addRoute(routeConfig);
+    return this;
   }
 }

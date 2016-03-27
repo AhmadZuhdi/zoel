@@ -1,4 +1,7 @@
 import Hapi from 'hapi';
+import pathConfig from 'configs/paths';
+
+const AVAILABLE_METHODS = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'];
 
 export default class HapiEngine {
   constructor(config) {
@@ -18,6 +21,31 @@ export default class HapiEngine {
       }
 
       console.log(`Hapi Engine starten at: ${this.server.info.uri}`);
+    });
+  }
+  /**
+   * add new route to engine
+   * @param {{methods:(String|String[]), path:String, handler:(String|Function)}} routeConfig
+   * @returns {void}
+   */
+  addRoute(routeConfig) {
+    if (routeConfig.methods === '*') { routeConfig.methods = AVAILABLE_METHODS; }
+    console.log(routeConfig);
+    const [handlerPath, methodName] = routeConfig.handler.split('@');
+    const handler = require(handlerPath);
+
+    this.server.route({
+      method: routeConfig.methods,
+      path: routeConfig.path,
+      handler: (request, reply) => {
+        const action = handler[methodName]();
+
+        if (action.then && typeof action.then === 'function') { // return Promise
+          action.then(result => reply(result));
+        } else {
+          reply(action);
+        }
+      },
     });
   }
 }
