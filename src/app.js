@@ -24,7 +24,7 @@ packageLoader.start()
   });
 });
 
-process.stdin.resume();//so the program will not close instantly
+process.stdin.resume();// so the program will not close instantly
 
 function exitHandler(options, err) {
   if (err) log(err.stack);

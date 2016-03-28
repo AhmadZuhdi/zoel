@@ -47,7 +47,10 @@ export default class PackageLoader {
 
     return additionalConfig;
   }
-  loadPackageHookConfiguration() {}
+  loadPackageHookConfiguration(packageConfig) {
+    log(`[${packageConfig.name}] Package with configuration enabled is not supported yet!`);
+    return {};
+  }
   loadPackageHookConvention(packageConfig) {
     const files = readdirSync(`${packageConfig.path}/configs`);
     const hooks = {};

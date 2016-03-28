@@ -1,3 +1,3 @@
-function Protected(target, prop, descriptor) {}
+function Protected() {}
 
 export { Protected };

@@ -4,7 +4,7 @@
   "description": "zoel framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/bin/eslint src/** && npm run build",
     "start": "node .",
     "build": "babel src --out-dir app",
     "build:watch": "babel src --out-dir app --watch"

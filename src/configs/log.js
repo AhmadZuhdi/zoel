@@ -1,4 +1,4 @@
-import configPath from 'configs/paths'; 
+import configPath from 'configs/paths';
 
 export default {
   debug: true,
