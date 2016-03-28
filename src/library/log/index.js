@@ -18,6 +18,6 @@ function log(...args) {
 log.error = function (...args) {
   if (DEBUG) { console.error(...args); }
   if (configLog.saveToFile) { writeLogToFile(...args); }
-}
+};
 
 export default log;
