@@ -20,7 +20,13 @@ export default class PackageLoader {
       });
 
       // remove disabled package
-      packages = packages.filter(packageConfig => packageConfig.enable);
+      packages = packages.filter(packageConfig => {
+        if (typeof packageConfig.enable === 'undefined') {
+          return true;
+        }
+
+        return packageConfig.enable;
+      });
 
       packages = packages.map(packageConfig => {
         packageConfig = Object.assign(packageConfig, this.loadPackageConfig(packageConfig));
