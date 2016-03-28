@@ -1,4 +1,5 @@
 # ZOEL Framework
+[![Build Status](https://travis-ci.org/AhmadZuhdi/zoel.svg?branch=master)](https://travis-ci.org/AhmadZuhdi/zoel)
 
 ## INSTALLATION
 - clone this repo
