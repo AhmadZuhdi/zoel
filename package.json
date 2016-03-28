@@ -4,7 +4,7 @@
   "description": "zoel framework",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/bin/eslint src/** && npm run build",
+    "test": "./node_modules/.bin/eslint src/** && npm run build",
     "start": "node .",
     "build": "babel src --out-dir app",
     "build:watch": "babel src --out-dir app --watch"
